@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: StuffMart_production
-  username: StuffMart
-  password: <%= ENV['STUFFMART_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
