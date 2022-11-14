@@ -6,7 +6,7 @@ function Purchases({ buyer }) {
     const [purchasedItems, setPurchasedItems] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:3000/purchased_items")
+        fetch("/purchased_items")
             .then(response => response.json())
             .then(data => setPurchasedItems(data))
     }, [])

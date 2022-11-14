@@ -8,7 +8,7 @@ function ItemContainer() {
     const [searchTerm, setSearchTerm] = useState("")
 
     useEffect(() => {
-        fetch("http://localhost:3000/items")
+        fetch(`/items`)
             .then(response => response.json())
             .then(data => setItems(data))
     }, [])

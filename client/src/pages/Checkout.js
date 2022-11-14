@@ -11,7 +11,7 @@ function Checkout({ buyer }) {
     const [cartItems, setCartItems] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:3000/items")
+        fetch("/items")
             .then(response => response.json())
             .then(data => setCartItems(data))
     }, [])
