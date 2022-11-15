@@ -14,7 +14,6 @@ function Purchases({ buyer }) {
     let buyerPurchasedItems = purchasedItems.filter(items => {
         return items.buyer.id === buyer.id
     })
-    console.log(buyerPurchasedItems)
 
     return (
         <div>
