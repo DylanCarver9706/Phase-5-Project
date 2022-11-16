@@ -6,6 +6,7 @@ import Cart from "../pages/Cart";
 import Purchases from "../pages/Purchases";
 import NavBar from "../components/NavBar"
 import Checkout from "../pages/Checkout";
+import ItemDetails from "../pages/ItemDetails";
 
 function App() {
   const [buyer, setBuyer] = useState(null);
@@ -43,6 +44,10 @@ function App() {
             <Checkout buyer={buyer} />
           </Route>
 
+          <Route path="/item_details">
+            <ItemDetails buyer={buyer} />
+          </Route>
+          
         </Switch>
       </div>
     </>

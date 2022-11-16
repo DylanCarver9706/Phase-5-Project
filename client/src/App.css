@@ -3,13 +3,17 @@
 
 }
 
+/* #invisible {
+  visibility: hidden;
+} */
+
 #home-card {
   margin: auto;
   border-width: 3px;
   border-style: solid;
   border-color: #287EC7;
   height: 400px;
-  width: 80%;
+  width: auto;
 }
 
 .home-card-btn {
@@ -37,8 +41,12 @@
 .App {
   text-align: center;
   background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-  color: white;
+  color: rgb(201, 195, 195);
 
+}
+
+#body {
+  background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
 }
 
 .App-logo {

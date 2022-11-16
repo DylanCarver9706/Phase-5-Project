@@ -6,38 +6,50 @@ function Checkout({ buyer }) {
 
     const [cartItems, setCartItems] = useState([])
 
+    // useEffect(() => {
+    //     fetch("/items")
+    //         .then(response => response.json())
+    //         .then(data => setCartItems(data))
+    // }, [])
+
+    // let inCartItems = cartItems.filter(items => {
+    //     return items.cart_status === true
+    // })
+
     useEffect(() => {
-        fetch("/items")
+        fetch("/buyer_carts")
             .then(response => response.json())
             .then(data => setCartItems(data))
     }, [])
 
     let inCartItems = cartItems.filter(items => {
-        return items.cart_status === true
+        return items.buyer_id === buyer.id
     })
+
+    // console.log(inCartItems[0].item.price)
 
         let sum = 0;
         for(let i=0; i < inCartItems.length; i++){
-            sum += parseInt(inCartItems[i].price);
+            sum += parseInt(inCartItems[i].item.price);
         }
 
         const handleCheckout = () => {
 
             for (let i = 0;
                 i < inCartItems.length; i++) {
-                fetch(`/items/${inCartItems[i].id}`, {
-                    method: 'PATCH',
-                    headers: {
-                        "Content-Type": 'application/json',
-                    },
-                    body: JSON.stringify({ cart_status: !inCartItems[i].cart_status, sold_status: !inCartItems[i].sold_status })
-                })
-                    .then(resp => resp.json())
-                    .then(data => console.log(data))
+                // fetch(`/items/${inCartItems[i].item.id}`, {
+                //     method: 'PATCH',
+                //     headers: {
+                //         "Content-Type": 'application/json',
+                //     },
+                //     body: JSON.stringify({ cart_status: !inCartItems[i].item.cart_status, sold_status: !inCartItems[i].item.sold_status })
+                // })
+                //     .then(resp => resp.json())
+                //     .then(data => console.log(data))
 
                 let newPurchaseInfo = {
                     buyer_id: buyer.id,
-                    item_id: inCartItems[i].id
+                    item_id: inCartItems[i].item.id
                 }
 
                 fetch(`/purchased_items`, {
