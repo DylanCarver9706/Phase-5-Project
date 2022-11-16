@@ -15,7 +15,7 @@ function NavBar({ buyer, setBuyer }) {
   }
 
   return (
-    <Wrapper>
+    <Wrapper className="navbar">
 
       <Logo>
         <Link to="/">WendyMart</Link>

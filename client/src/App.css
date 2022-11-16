@@ -1,5 +1,44 @@
+.navbar {
+  background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+
+}
+
+#home-card {
+  margin: auto;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #287EC7;
+  height: 400px;
+  width: 80%;
+}
+
+.home-card-btn {
+  float: right;
+}
+
+.home-card-desc {
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  float: right;
+  width: 850px;
+  height: 200px;
+  margin: 0 15px 0 0;
+}
+
+.home-card-image {
+  float: left;
+  margin: 15px 15px 0 15px;
+  width: 400px;
+  height: 250px;
+}
+
+
 .App {
   text-align: center;
+  background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  color: white;
+
 }
 
 .App-logo {
@@ -32,6 +71,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

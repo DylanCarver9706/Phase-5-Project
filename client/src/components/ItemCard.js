@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "../styles";
 
 function ItemCard({ item }) {
 
@@ -21,16 +22,19 @@ function ItemCard({ item }) {
   }
 
   return (
-    <div className="card">
-      <img src={item.img_url} alt={item.item_name} />
-      <h4>{item.item_name}</h4>
-      <p>Price: ${item.price}</p>
-      <p>* {item.description} *</p>
-      {addToCart ? (
-        <button onClick={handleAddToCart}>Remove From Cart</button>
-      ) : (
-        <button className="primary" onClick={handleAddToCart}>Add To Cart</button>
-      )}
+    <div>
+      <div id="home-card">
+        <img class="home-card-image" src={item.img_url} alt={item.item_name} />
+        <h4>{item.item_name}</h4>
+        <p>Price: ${item.price}</p>
+        <p class="home-card-desc">{item.description}</p>
+        {addToCart ? (
+          <Button className="home-card-btn" onClick={handleAddToCart}>Remove From Cart</Button>
+        ) : (
+          <Button className="primary" onClick={handleAddToCart}>Add To Cart</Button>
+        )}
+      </div>
+      <br></br>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ItemCard from "../components/ItemCard";
 import Search from "../components/Search"
 
+
 function ItemContainer() {
 
     const [items, setItems] = useState([])
@@ -26,12 +27,13 @@ function ItemContainer() {
     })
 
     return (
-        <div>
+        <body>
             <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-            <ul className="cards">
+            <br></br>
+            <aricle id="home-cards">
                 {filteredItems.map(item => <ItemCard item={item} key={item.id} />)}
-            </ul>
-        </div>
+            </aricle>
+        </body>
     )
 }
 
