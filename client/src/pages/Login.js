@@ -11,7 +11,7 @@ function Login({ onLogin }) {
   return (
     <Wrapper>
 
-      <Logo>WendyMart</Logo>
+      <Logo>StuffMart</Logo>
 
       {showLogin ? (
         <>

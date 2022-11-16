@@ -28,11 +28,11 @@ function App() {
         <Switch>
 
           <Route exact path="/">
-            <Home />
+            <Home buyer={buyer}/>
           </Route>
 
           <Route path="/cart">
-            <Cart />
+            <Cart buyer={buyer}/>
           </Route>
 
           <Route path="/purchases">

@@ -6,7 +6,7 @@ import { Button } from "../styles";
 function NavBar({ buyer, setBuyer }) {
 
   function handleLogoutClick() {
-    console.log("Click")
+    // console.log("Click")
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setBuyer(false);
@@ -18,7 +18,7 @@ function NavBar({ buyer, setBuyer }) {
     <Wrapper className="navbar">
 
       <Logo>
-        <Link to="/">WendyMart</Link>
+        <Link to="/">StuffMart</Link>
       </Logo>
 
       <Nav>

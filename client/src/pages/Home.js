@@ -3,7 +3,7 @@ import ItemCard from "../components/ItemCard";
 import Search from "../components/Search"
 
 
-function ItemContainer() {
+function ItemContainer({buyer}) {
 
     const [items, setItems] = useState([])
     const [searchTerm, setSearchTerm] = useState("")
@@ -14,11 +14,11 @@ function ItemContainer() {
             .then(data => setItems(data))
     }, [])
 
-    let cartItems = items.filter(item => {
-        return item.cart_status === false
-    })
+    // let cartItems = items.filter(item => {
+    //     return item.cart_status === false
+    // })
 
-    let availableItems = cartItems.filter(item => {
+    let availableItems = items.filter(item => {
         return item.sold_status === false
     })
 
@@ -31,7 +31,7 @@ function ItemContainer() {
             <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <br></br>
             <aricle id="home-cards">
-                {filteredItems.map(item => <ItemCard item={item} key={item.id} />)}
+                {filteredItems.map(item => <ItemCard buyer={buyer} item={item} key={item.id} />)}
             </aricle>
         </body>
     )
