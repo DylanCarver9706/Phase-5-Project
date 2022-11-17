@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 //  , useEffect
 import { Button } from "../styles";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import ItemDetails from "../pages/ItemDetails";
 
 function ItemCard({ item, buyer }) {
@@ -59,9 +59,9 @@ function ItemCard({ item, buyer }) {
   return (
     <div>
       <div id="home-card">
-        <Link to="/item_details" >
+        {/* <Link to="/item_details" > */}
           <img class="home-card-image" src={item.img_url} alt={item.item_name} />
-        </Link>
+        {/* </Link> */}
         {/* <Link to="/item_details"> */}
           <h2>{item.item_name}</h2>
         {/* </Link> */}

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "../styles";
-import { Link } from "react-router-dom";
-// import { useHistory } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 
 function Checkout({ buyer }) {
 
-    // const history = useHistory()
+    const history = useHistory()
     const [cartItems, setCartItems] = useState([])
 
     // useEffect(() => {
@@ -30,14 +30,14 @@ function Checkout({ buyer }) {
     })
 
     // console.log(inCartItems[0].item.price)
+    // console.log(inCartItems.length)
 
     let sum = 0;
     for (let i = 0; i < inCartItems.length; i++) {
         sum += parseInt(inCartItems[i].item.price);
     }
 
-    // console.log(inCartItems.length)
-    const handleCheckout = () => {
+    const handlePurchase = () => {
         for (let i = 0;
             i < (inCartItems.length + 1); i++) {
             fetch(`/items/${inCartItems[i].item.id}`, {
@@ -71,12 +71,16 @@ function Checkout({ buyer }) {
                 method: 'DELETE'
             })
                 .then(resp => resp.json())
-                .then(data => console.log("done"))
+                .then(data => console.log(data))
         }
-        // history.push("/")
-        console.log("done")
-        window.location.reload(false)
-
+    }
+    
+    
+    
+    const handleCheckout = () => {
+        let path = ("/")
+        history.push(path)
+        handlePurchase()
     }
 
     return (
@@ -87,7 +91,7 @@ function Checkout({ buyer }) {
             <h2>Ship To: {buyer.address}</h2>
             <h2>Card Info: 1234-5678-9876-5432</h2>
             <h2>Email Confirmation: {buyer.email}</h2>
-            <Button onClick={handleCheckout} as={Link} to="/">
+            <Button onClick={handleCheckout}>
                 Checkout!
             </Button>
         </div>
