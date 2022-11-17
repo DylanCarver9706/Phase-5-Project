@@ -19,9 +19,9 @@ function SellerSummary({ buyer }) {
 
 
     let buyerPurchasedItems = purchasedItems.filter(items => {
-        return items.item.seller_id === buyer.id
+        return items.item.seller_id === buyer.seller_id
     })
-    // console.log(buyerPurchasedItems)
+    console.log(buyerPurchasedItems)
 
     let sum = 0;
     for (let i = 0; i < buyerPurchasedItems.length; i++) {
@@ -35,6 +35,7 @@ function SellerSummary({ buyer }) {
             <Button as={Link} to="/new_item">
                 Sell Your Stuff!
             </Button>
+            &nbsp;&nbsp;
             <Button as={Link} to="/active_items">
                 Check On Your Stuff!
             </Button>

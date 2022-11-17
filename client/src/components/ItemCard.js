@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 //  , useEffect
 import { Button } from "../styles";
 import { Link } from "react-router-dom";
@@ -53,7 +53,7 @@ function ItemCard({ item, buyer }) {
       .then(resp => resp.json())
       .then(data => console.log(data))
 
-    window.location.reload(false)
+    // window.location.reload(false)
   }
 
   return (

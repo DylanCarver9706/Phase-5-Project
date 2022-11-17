@@ -5,7 +5,7 @@ import Search from "../components/Search"
 
 
 function ItemContainer({ buyer }) {
-    // console.log(buyer)
+    console.log(buyer.seller_id)
     const [items, setItems] = useState([])
     const [searchTerm, setSearchTerm] = useState("")
 

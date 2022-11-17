@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "../styles";
 import { Link } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
+
 
 function Checkout({ buyer }) {
 
+    // const history = useHistory()
     const [cartItems, setCartItems] = useState([])
 
     // useEffect(() => {
@@ -33,19 +36,19 @@ function Checkout({ buyer }) {
         sum += parseInt(inCartItems[i].item.price);
     }
 
-    // console.log(inCartItems)
+    // console.log(inCartItems.length)
     const handleCheckout = () => {
         for (let i = 0;
-            i < inCartItems.length; i++) {
-            // fetch(`/items/${inCartItems[i].item.id}`, {
-            //     method: 'PATCH',
-            //     headers: {
-            //         "Content-Type": 'application/json',
-            //     },
-            //     body: JSON.stringify({ cart_status: !inCartItems[i].item.cart_status, sold_status: !inCartItems[i].item.sold_status })
-            // })
-            //     .then(resp => resp.json())
-            //     .then(data => console.log(data))
+            i < (inCartItems.length + 1); i++) {
+            fetch(`/items/${inCartItems[i].item.id}`, {
+                method: 'PATCH',
+                headers: {
+                    "Content-Type": 'application/json',
+                },
+                body: JSON.stringify({ sold_status: !inCartItems[i].item.sold_status })
+            })
+                .then(resp => resp.json())
+                .then(data => console.log(data))
 
             let newPurchaseInfo = {
                 buyer_id: buyer.id,
@@ -68,8 +71,10 @@ function Checkout({ buyer }) {
                 method: 'DELETE'
             })
                 .then(resp => resp.json())
-                .then(data => console.log(data))
+                .then(data => console.log("done"))
         }
+        // history.push("/")
+        console.log("done")
         window.location.reload(false)
 
     }
@@ -82,7 +87,7 @@ function Checkout({ buyer }) {
             <h2>Ship To: {buyer.address}</h2>
             <h2>Card Info: 1234-5678-9876-5432</h2>
             <h2>Email Confirmation: {buyer.email}</h2>
-            <Button onClick={handleCheckout} as={Link} to="/" >
+            <Button onClick={handleCheckout} as={Link} to="/">
                 Checkout!
             </Button>
         </div>
