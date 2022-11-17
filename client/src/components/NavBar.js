@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles";
 
 function NavBar({ buyer, setBuyer }) {
+
+  const [stuffStatus, setStuffStatus] = useState(true)
 
   function handleLogoutClick() {
     // console.log("Click")
@@ -12,6 +14,10 @@ function NavBar({ buyer, setBuyer }) {
         setBuyer(false);
       }
     });
+  }
+
+  const handleStuffStatus = () => {
+    setStuffStatus(stuffStatus => !stuffStatus)
   }
 
   return (
@@ -26,9 +32,14 @@ function NavBar({ buyer, setBuyer }) {
           Purchases
         </Button>
 
-        {/* <Button as={Link} to="/new">
-          Sell Your Stuff
-        </Button> */}
+        {stuffStatus ? (
+        <Button onClick={handleStuffStatus} as={Link} to="/seller_summary">
+          Check On Your Stuff
+        </Button>) : (
+          <Button onClick={handleStuffStatus} as={Link} to="/">
+          Look At Stuff
+        </Button>)}
+        
 
         <Button variant="outline" onClick={handleLogoutClick}>
           Logout
@@ -53,7 +64,7 @@ const Wrapper = styled.header`
 const Logo = styled.h1`
   font-family: "Permanent Marker", cursive;
   font-size: 3rem;
-  color: deeppink;
+  color: yellow;
   margin: 0;
   line-height: 1;
 

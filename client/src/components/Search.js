@@ -8,11 +8,12 @@ function Search({ setSearchTerm }) {
 
   return (
     <div className="searchbar">
-      <label htmlFor="search">Search Stuff: </label>
+      <label htmlFor="search">Search For: </label>
       <input
         type="text"
         id="search"
-        placeholder="Type a name to search..."
+        style={{width: 255}}
+        placeholder="Trinkets, odds and ends, that sort of thing..."
         onChange={(e) => onSearch(e)}
       />
     </div>

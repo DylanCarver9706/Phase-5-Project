@@ -1,8 +1,8 @@
 puts "Seeding Buyers...👨👩"
 
-b1 = Buyer.create(full_name: "Dylan Carver", username: "dylancarver19", email: "dylancarver@gmail.com", password: "1234", address: "123 Main St.")
-b2 = Buyer.create(full_name: "Kristen Carver", username: "kristencarver23", email: "kristencarver@gmail.com", password: "1234", address: "1234 Main St.")
-b3 = Buyer.create(full_name: "Winter Carver", username: "wintercarver21", email: "wintercarver@gmail.com", password: "1234", address: "12345 Main St.")
+b1 = Buyer.create(seller_id: 1, full_name: "Dylan Carver", username: "dylancarver19", email: "dylancarver@gmail.com", password: "1234", address: "123 Main St.")
+b2 = Buyer.create(seller_id: 2, full_name: "Kristen Carver", username: "kristencarver23", email: "kristencarver@gmail.com", password: "1234", address: "1234 Main St.")
+b3 = Buyer.create(seller_id: 3, full_name: "Winter Carver", username: "wintercarver21", email: "wintercarver@gmail.com", password: "1234", address: "12345 Main St.")
 
 puts "Seeding Items...📦📦📦"
 
@@ -30,27 +30,27 @@ iimg6 = "https://tpucdn.com/cpu-specs/images/chips/2846-package.jpg"
 iimg7 = "https://image-us.samsung.com/SamsungUS/samsungbusiness/products/computing/ssd/client/980-pro/2tb/MZ-V8P2T0BW_001_Front_Black.jpg?$product-details-jpg$"
 iimg8 = "https://tpucdn.com/ssd-specs/images/d/829-front.small.jpg"
 
-i1 = Item.create(item_name: "NVIDIA GeForce RTX 4090 Ti", price: 1599, img_url: iimg1, description: ides1, category: "GPU", cart_status: false, sold_status: false, manufacturer: "Nvidia", clock_speed: 2625 , capacity: nil)
+i1 = Item.create(seller_id: b2.seller_id, item_name: "NVIDIA GeForce RTX 4090 Ti", price: 1599, img_url: iimg1, description: ides1, category: "GPU", cart_status: false, sold_status: false, manufacturer: "Nvidia", clock_speed: 2625 , capacity: nil)
 
-i2 = Item.create(item_name: "AMD Radeon RX 6900 XT", price: 699.99, img_url: iimg2, description: ides2, category: "GPU", cart_status: false, sold_status: false, manufacturer: "AMD", clock_speed: 2625 , capacity: nil)
+i2 = Item.create(seller_id: b2.seller_id, item_name: "AMD Radeon RX 6900 XT", price: 699.99, img_url: iimg2, description: ides2, category: "GPU", cart_status: false, sold_status: false, manufacturer: "AMD", clock_speed: 2625 , capacity: nil)
 
-i3 = Item.create(item_name: "VENGEANCE® RGB PRO 32GB (4x8GB) DDR4 DRAM 3200MHz C16 Memory Kit — White", price: 149.99, img_url: iimg3, description: ides3, category: "Memory", cart_status: false, sold_status: false, manufacturer: "Corsair", clock_speed: 3200 , capacity: 32)
+i3 = Item.create(seller_id: b3.seller_id, item_name: "VENGEANCE® RGB PRO 32GB (4x8GB) DDR4 DRAM 3200MHz C16 Memory Kit — White", price: 149.99, img_url: iimg3, description: ides3, category: "Memory", cart_status: false, sold_status: false, manufacturer: "Corsair", clock_speed: 3200 , capacity: 32)
 
-i4 = Item.create(item_name: "Trident Z Royal 16GB (2x8GB) DDR4 DRAM 4800MHz", price: 435.99, img_url: iimg4, description: ides4, category: "Memory", cart_status: false, sold_status: false, manufacturer: "G.Skill", clock_speed: 4800 , capacity: 16)
+i4 = Item.create(seller_id: b3.seller_id, item_name: "Trident Z Royal 16GB (2x8GB) DDR4 DRAM 4800MHz", price: 435.99, img_url: iimg4, description: ides4, category: "Memory", cart_status: false, sold_status: false, manufacturer: "G.Skill", clock_speed: 4800 , capacity: 16)
 
-i5 = Item.create(item_name: "Intel Core i9-13900K", price: 589, img_url: iimg5, description: ides5, category: "CPU", cart_status: false, sold_status: false, manufacturer: "Intel", clock_speed: 5800 , capacity: nil)
+i5 = Item.create(seller_id: b2.seller_id, item_name: "Intel Core i9-13900K", price: 589, img_url: iimg5, description: ides5, category: "CPU", cart_status: false, sold_status: false, manufacturer: "Intel", clock_speed: 5800 , capacity: nil)
 
-i6 = Item.create(item_name: "AMD Ryzen 9 7950X", price: 699, img_url: iimg6, description: ides6, category: "CPU", cart_status: false, sold_status: false, manufacturer: "AMD", clock_speed: 5700 , capacity: nil)
+i6 = Item.create(seller_id: b1.seller_id, item_name: "AMD Ryzen 9 7950X", price: 699, img_url: iimg6, description: ides6, category: "CPU", cart_status: false, sold_status: false, manufacturer: "AMD", clock_speed: 5700 , capacity: nil)
 
-i7 = Item.create(item_name: "980 PRO PCIe® 4.0 NVMe™ SSD 2TB", price: 279.99, img_url: iimg7, description: ides7, category: "Storage", cart_status: false, sold_status: false, manufacturer: "Samsung", clock_speed: nil , capacity: 2000)
+i7 = Item.create(seller_id: b1.seller_id, item_name: "980 PRO PCIe® 4.0 NVMe™ SSD 2TB", price: 279.99, img_url: iimg7, description: ides7, category: "Storage", cart_status: false, sold_status: false, manufacturer: "Samsung", clock_speed: nil , capacity: 2000)
 
 
 
-i8 = Item.create(item_name: "Crucial P3 1TB PCIe M.2 2280 SSD", price: 89.99, img_url: iimg8, description: ides8, category: "Storage", cart_status: false, sold_status: true, manufacturer: "Crucial", clock_speed: nil , capacity: 1000)
+i8 = Item.create(seller_id: b1.seller_id, item_name: "Crucial P3 1TB PCIe M.2 2280 SSD", price: 89.99, img_url: iimg8, description: ides8, category: "Storage", cart_status: false, sold_status: true, manufacturer: "Crucial", clock_speed: nil , capacity: 1000)
 
 puts "Seeding Purchased Items...💲💲💲"
 
-PurchasedItem.create(buyer_id: b3.id, item_id: i8.id, purchase_date: nil)
+PurchasedItem.create(seller_id: b1.seller_id, buyer_id: b3.id, item_id: i8.id, purchase_date: nil)
 
 
 

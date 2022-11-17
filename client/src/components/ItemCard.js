@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 //  , useEffect
 import { Button } from "../styles";
 import { Link } from "react-router-dom";
@@ -66,7 +66,7 @@ function ItemCard({ item, buyer }) {
           <h2>{item.item_name}</h2>
         {/* </Link> */}
         <h2>${item.price}</h2>
-        <p class="home-card-desc">{item.description}</p>
+        {/* <p class="home-card-desc">{item.description}</p> */}
         {addToCart ? (
           null
           // <Button className="primary" onClick={handleRemoveFromCart}>Remove From Cart</Button>

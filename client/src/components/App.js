@@ -7,6 +7,8 @@ import Purchases from "../pages/Purchases";
 import NavBar from "../components/NavBar"
 import Checkout from "../pages/Checkout";
 import ItemDetails from "../pages/ItemDetails";
+import SellerSummary from "../pages/SellerSummary";
+import NewItemForm from "../pages/NewItemForm";
 
 function App() {
   const [buyer, setBuyer] = useState(null);
@@ -46,6 +48,14 @@ function App() {
 
           <Route path="/item_details">
             <ItemDetails buyer={buyer} />
+          </Route>
+
+          <Route path="/seller_summary">
+            <SellerSummary buyer={buyer} />
+          </Route>
+
+          <Route path="/new_item">
+            <NewItemForm buyer={buyer} />
           </Route>
           
         </Switch>
