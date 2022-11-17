@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles";
 
 function NavBar({ buyer, setBuyer }) {
-
-  const [stuffStatus, setStuffStatus] = useState(true)
 
   function handleLogoutClick() {
     // console.log("Click")
@@ -14,10 +12,6 @@ function NavBar({ buyer, setBuyer }) {
         setBuyer(false);
       }
     });
-  }
-
-  const handleStuffStatus = () => {
-    setStuffStatus(stuffStatus => !stuffStatus)
   }
 
   return (
@@ -32,14 +26,9 @@ function NavBar({ buyer, setBuyer }) {
           Purchases
         </Button>
 
-        {stuffStatus ? (
-        <Button onClick={handleStuffStatus} as={Link} to="/seller_summary">
-          Check On Your Stuff
-        </Button>) : (
-          <Button onClick={handleStuffStatus} as={Link} to="/">
-          Look At Stuff
-        </Button>)}
-        
+        <Button as={Link} to="/seller_summary">
+          Seller Home
+        </Button>
 
         <Button variant="outline" onClick={handleLogoutClick}>
           Logout
