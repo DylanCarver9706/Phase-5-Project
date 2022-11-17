@@ -35,6 +35,9 @@ function SellerSummary({ buyer }) {
             <Button as={Link} to="/new_item">
                 Sell Your Stuff!
             </Button>
+            <Button as={Link} to="/active_items">
+                Check On Your Stuff!
+            </Button>
             <article className="cards">
                 {buyerPurchasedItems.map(soldItems => <ItemCardSoldItems soldItems={soldItems} key={soldItems.id} />)}
             </article>

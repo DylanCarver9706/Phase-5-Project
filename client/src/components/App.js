@@ -9,6 +9,7 @@ import Checkout from "../pages/Checkout";
 import ItemDetails from "../pages/ItemDetails";
 import SellerSummary from "../pages/SellerSummary";
 import NewItemForm from "../pages/NewItemForm";
+import ActiveItems from "../pages/ActiveItems";
 
 function App() {
   const [buyer, setBuyer] = useState(null);
@@ -57,7 +58,11 @@ function App() {
           <Route path="/new_item">
             <NewItemForm buyer={buyer} />
           </Route>
-          
+
+          <Route path="/active_items">
+            <ActiveItems buyer={buyer} />
+          </Route>
+
         </Switch>
       </div>
     </>
