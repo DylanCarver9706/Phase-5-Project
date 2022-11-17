@@ -16,7 +16,7 @@ function ActiveItems({ buyer }) {
             .then(data => setItems(data))
     }, [])
 
-    // console.log(buyer.seller_id)
+    console.log(buyer)
 
     let sellersItems = items.filter(items => {
         return items.seller_id === buyer.seller_id

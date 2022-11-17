@@ -5,7 +5,7 @@ import Search from "../components/Search"
 
 
 function ItemContainer({ buyer }) {
-
+    // console.log(buyer)
     const [items, setItems] = useState([])
     const [searchTerm, setSearchTerm] = useState("")
 
@@ -23,7 +23,11 @@ function ItemContainer({ buyer }) {
         return item.sold_status === false
     })
 
-    let filteredItems = availableItems.filter(item => {
+    let notBuyersItems = availableItems.filter(item => {
+        return item.seller_id !== buyer.seller_id
+    })
+
+    let filteredItems = notBuyersItems.filter(item => {
         return item.item_name.toLowerCase().includes(searchTerm)
     })
 
