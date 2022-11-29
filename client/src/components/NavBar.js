@@ -35,7 +35,7 @@ function NavBar({ buyer, setBuyer }) {
         </Button>
 
         <Link to="/cart">
-          <img className="cartphoto" style={{ width: 35, height: 35 }} src="https://www.freeiconspng.com/thumbs/shopping-cart-icon/shopping-cart-icon-2.png" alt="Shopping Cart Icon" ></img>
+          <img className="cartphoto" style={{ width: 35, height: 35 }} src="https://i.imgur.com/PrevY2R.png" alt="Shopping Cart Icon" ></img>
         </Link>
       </Nav>
 
@@ -53,7 +53,7 @@ const Wrapper = styled.header`
 const Logo = styled.h1`
   font-family: "Permanent Marker", cursive;
   font-size: 3rem;
-  color: yellow;
+  color: #ff1493;
   margin: 0;
   line-height: 1;
 

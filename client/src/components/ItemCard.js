@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 //  , useEffect
 import { Button } from "../styles";
 // import { Link } from "react-router-dom";
@@ -11,28 +11,28 @@ function ItemCard({ item, buyer }) {
   // const [items, setItems] = useState([])
   // const [cartItems, setCartItems] = useState([])
 
-// useEffect(() => {
-//   const url = `/items/`;
+  // useEffect(() => {
+  //   const url = `/items/`;
 
-//   const fetchData = async () => {
-//       try {
-//           const response = await fetch(url);
-//           const items = await response.json();
-//           // console.log(json);
-//           setItems(items);
-//       } catch (error) {
-//           console.log("error", error);
-//       }
-//   };
+  //   const fetchData = async () => {
+  //       try {
+  //           const response = await fetch(url);
+  //           const items = await response.json();
+  //           // console.log(json);
+  //           setItems(items);
+  //       } catch (error) {
+  //           console.log("error", error);
+  //       }
+  //   };
 
-//   fetchData();
-// }, []);
+  //   fetchData();
+  // }, []);
 
-// let filterItems = items.filter(oneitem => {
-//   return oneitem.id === item.id
-// })
+  // let filterItems = items.filter(oneitem => {
+  //   return oneitem.id === item.id
+  // })
 
-// console.log(filterItems)
+  // console.log(filterItems)
 
   const handleAddToCart = () => {
     setAddToCart(addToCart => !addToCart)
@@ -57,26 +57,19 @@ function ItemCard({ item, buyer }) {
   }
 
   return (
-    <div>
-      <div id="home-card">
-        {/* <Link to="/item_details" > */}
-          <img class="home-card-image" src={item.img_url} alt={item.item_name} />
-        {/* </Link> */}
-        {/* <Link to="/item_details"> */}
-          <h2>{item.item_name}</h2>
-        {/* </Link> */}
-        <h2>${item.price}</h2>
-        {/* <p class="home-card-desc">{item.description}</p> */}
-        {addToCart ? (
-          null
-          // <Button className="primary" onClick={handleRemoveFromCart}>Remove From Cart</Button>
-        ) : (
-          <Button className="primary" onClick={handleAddToCart}>Add To Cart</Button>
-        )}
-      </div>
-      {/* <p id="invisible"><ItemDetails filterItems={filterItems} /></p> */}
-      <br></br>
-    </div>
+
+    <li className="card">
+      <img src={item.img_url} alt={item.item_name} />
+      <h4>{item.item_name}</h4>
+      <p>${item.price}</p>
+      {addToCart ? (
+        null
+      ) : (
+        <Button className="primary" onClick={handleAddToCart}>Add To Cart</Button>
+      )}
+    </li>
+
+
   );
 }
 

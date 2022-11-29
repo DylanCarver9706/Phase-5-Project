@@ -32,14 +32,14 @@ function ItemContainer({ buyer }) {
     })
 
     return (
-        <body>
+        <main>
             <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <br></br>
-            <aricle id="home-cards">
+            <ul className="cards">
                 {/* {items.map(item => <p id="invisible"><ItemDetails items={items} /></p>)} */}
                 {filteredItems.map(item => <ItemCard buyer={buyer} item={item} key={item.id} />)}
-            </aricle>
-        </body>
+            </ul>
+        </main>
     )
 }
 

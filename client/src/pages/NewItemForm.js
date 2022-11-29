@@ -56,7 +56,7 @@ function NewItemForm({buyer}) {
   }
 
   return (
-    <div className="new-item-form">
+    <div>
       <h2>New Item</h2>
       <form onSubmit={submitHandler} >
         <div className="inline fields" >
